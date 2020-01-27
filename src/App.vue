@@ -35,11 +35,7 @@
   align-items: flex-start;
   margin-bottom: 20px;
 
-  label {
-    color: #333;
-  }
-
-  input {
+  &__input {
     outline: none;
     border: 1px solid #CCC;
     height: 40px;
@@ -51,6 +47,52 @@
 
   &__disabled {
     background: #EEE;
+  }
+
+  &__label {
+    color: #333;
+  }
+
+  &__switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &__switch-label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 80px;
+    height: 40px;
+    background: grey;
+    display: block;
+    border-radius: 50px;
+    position: relative;
+  }
+
+  &__switch-label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 30px;
+    transition: 0.3s;
+  }
+
+  &__switch:checked + .form-control__switch-label {
+    background: #bada55;
+  }
+
+  &__switch:checked + .form-control__switch-label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  .form-control__switch-label:active:after {
+    width: 130px;
   }
 }
 </style>
