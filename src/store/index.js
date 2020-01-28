@@ -14,7 +14,6 @@ Vue.use(Vuex)
 // Устанавливаем чекбокс для первого доступного действия
 const firstInitCurrentInteraction = () => {
   for (var prop in flags) {
-    console.log(flags[prop]);
     if (flags[prop]) {
       return prop
     }
